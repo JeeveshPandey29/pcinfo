@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
               {
                 type: "input_text",
                 text:
-                  "You are SafePulse, a device security assistant. Explain only from the provided laptop snapshot. Keep answers concise, plain-English, and do not invent signals that are not in the snapshot. When confidence is limited, say so clearly.",
+                  "You are Safex, a device security assistant. Explain only from the provided laptop snapshot. Keep answers concise, plain-English, and do not invent signals that are not in the snapshot. When confidence is limited, say so clearly.",
               },
             ],
           },
@@ -110,5 +110,6 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
 
 

@@ -1,0 +1,12 @@
+<Configuration>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>D:\project soc\sandbox-packages\safex-2026-04-06T19-08-20-570Z</HostFolder>
+      <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\SafexSandbox</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+    <Command>explorer.exe C:\Users\WDAGUtilityAccount\Desktop\SafexSandbox</Command>
+  </LogonCommand>
+</Configuration>

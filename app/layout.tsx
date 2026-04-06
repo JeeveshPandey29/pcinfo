@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SafePulse | Personal SOC",
-  description: "An AI-powered personal SOC dashboard for everyday laptop users.",
+  title: "Safex",
+  description: "Safex reads local Windows security signals from this PC and explains them clearly.",
 };
 
 export default function RootLayout({

@@ -41,6 +41,9 @@ export type InstalledApp = {
   version?: string;
   publisher?: string;
   installedOn?: string;
+  trustScore: number;
+  trustLevel: "trusted" | "review" | "unknown";
+  trustReason: string;
 };
 
 export type AntivirusProduct = {
@@ -49,9 +52,59 @@ export type AntivirusProduct = {
   path?: string;
 };
 
+export type DefenderStatus = {
+  serviceRunning: boolean;
+  realtimeMonitoring: boolean | null;
+  serviceState: string;
+};
+
 export type FirewallProfile = {
   name: string;
   enabled: boolean;
+};
+
+export type UsbDevice = {
+  name: string;
+  status: string;
+  instanceId: string;
+  className: string;
+};
+
+export type FileSignerStatus = "signed" | "unsigned" | "unknown";
+
+export type FileScanFinding = {
+  id: string;
+  name: string;
+  fullPath: string;
+  directory: string;
+  category: "double_extension" | "suspicious_type";
+  reason: string;
+  sizeBytes: number;
+  modifiedAt: string;
+  extension: string;
+  sha256: string;
+  signer: string;
+  signerStatus: FileSignerStatus;
+  previewSupported: boolean;
+};
+
+export type FileScanResult = {
+  generatedAt: string;
+  scannedRoots: string[];
+  findings: FileScanFinding[];
+};
+
+export type FilePreviewResponse = {
+  path: string;
+  preview: string;
+  truncated: boolean;
+  languageHint: string;
+};
+
+export type SandboxPackageResponse = {
+  packageFolder: string;
+  sandboxFile: string;
+  copiedFile: string;
 };
 
 export type DeviceSnapshot = {
@@ -61,7 +114,9 @@ export type DeviceSnapshot = {
   osVersion: string;
   lastBootTime: string;
   antivirus: AntivirusProduct[];
+  defenderStatus: DefenderStatus;
   firewallProfiles: FirewallProfile[];
+  usbDevices: UsbDevice[];
   startupEntries: StartupEntry[];
   installedApps: InstalledApp[];
   failedLoginCount24h: number;
@@ -80,4 +135,3 @@ export type AskResponse = {
   answer: string;
   source: "openai" | "local";
 };
-
